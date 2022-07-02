@@ -1,3 +1,4 @@
+import React,{useState} from 'react'
 import {
   ChakraProvider,
   theme,
@@ -9,10 +10,14 @@ import {useState} from 'react'
 
 
 function App() {
-  const [data, setData]=useState("empty component")
+  const [searchHistory,setSearchHistory] = useState([])
+  const [currentSearchResult,setCurrentSearchResult] = useState("")
+
+
   return (
     <ChakraProvider theme={theme}>
         <Example thiscouldbeanymeaningfulname={"the text that I am passing"}  data={data} setData={setData} />
+        
         <Home />
         <Nav />
     </ChakraProvider>
