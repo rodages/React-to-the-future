@@ -82,14 +82,14 @@ function Search(){
     return (
         <>
             <Box
-                // bgImage="url('/assets/runners.jpeg')"
-                bgPosition="center"
                 w="100%"
-                bgRepeat="no-repeat"
+                position={'fixed'} 
+                top={0}
+                p={10}
                 >
-                <Box textAlign="center" fontSize="xl">
-                    <Box spacing={8}>
-                        <Center p={60}>
+                <Box textAlign="center" fontSize="xl" >
+                    <Box spacing={8} >
+                        <Center p={0} top={0}>
                             <form onSubmit={handleSubmit}>
                                 <InputGroup size='md'>
                                     <Input

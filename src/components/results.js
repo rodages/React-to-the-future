@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+    Box,
+    Center, Image
+} from '@chakra-ui/react';
 
 export const Results = ({ data }) => {
 
@@ -31,17 +35,27 @@ export const Results = ({ data }) => {
         //https://www.euro.who.int/__data/assets/pdf_file/0020/123086/AQG2ndEd_7_4Sulfurdioxide.pdf
     }
 
+    const conditions = {
+        'Good': '⭐️', 
+        'Moderate': '🤨',
+        'Unhealthy': '🤢'}
+
     return  (
         <>
-            <p>{data.placeName}, {data.state}, {data.countryCode}</p>
-            <p>Category: {data.aqiInfo.category}</p>
-            <p>AQI: {data.AQI}</p>
+        <Center flexDirection={'column'} textAlign="center">
+        <Box p={10}>{data.placeName}, {data.state}, {data.countryCode}</Box>
+        <Box>{data.aqiInfo.category}</Box>
+        <Box style={{fontSize: "70px"}}>{data.AQI}{conditions[data.aqiInfo.category]}</Box>
+        <Box style={{fontSize: "12px"}}>Air Quality Index (AQI)</Box>
+        <Box p={10}>
             <p>CO: {data.CO}</p>
             <p>NO2: {data.NO2}</p>
             <p>OZONE: {data.OZONE}</p>
             <p>PM10: {data.PM10}</p>
             <p>PM25: {data.PM25}</p>
             <p>SO2: {data.SO2}</p>
+        </Box>
+        </Center>
         </>
     )   
 };

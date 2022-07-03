@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {
     Box,
-    Center,
+    Center, Image
 } from '@chakra-ui/react';
 import { AirQualityResults } from '../components/airquality-results';
 import { Input, InputGroup, Spinner, IconButton,  } from '@chakra-ui/react'
@@ -73,6 +73,8 @@ export const Home = () => {
     return (
         <>
         <Search />
+        <Box boxSize='sm' minW={'100%'} w={'100%'} h={'50%'}bgSize={'cover'} bgImage="url('/assets/hills.png')" bottom={0} bgRepeat="no-repeat" objectFit='fill' position={'fixed'} opacity='75%'>
+        </Box>
             {/* <Box minH="100vh">
                 <Box textAlign="center" fontSize="xl">
                     <Box spacing={8}>
