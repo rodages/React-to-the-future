@@ -7,12 +7,13 @@ Text,
 Flex,
 Spacer,
 } from '@chakra-ui/react';
-// import { Keyimage} from '../components/image-container';
-import {Nav} from '../components/top-nav'
+import {Nav} from '../components/top-nav';
+import Logo from './logo.png';
 
 export const AboutUs = () => {
   const MainImage = {
     backgroundColor: "#white",
+    borderRadius: '10px',
     alignItems: "center",
     textAlign: "center;",
     height:'600px',
@@ -30,7 +31,7 @@ export const AboutUs = () => {
     backgroundColor: "#white",
     alignItems: "center",
     textAlign: "center;",
-    height:'650px',
+    height:'750px',
     width: '100%',
     marginTop:'-80px',
     backgroundImage: "url('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2017%2F05%2Fno-wifi-coffee-shops-ft-blog0517.jpg&q=60')",
@@ -51,20 +52,50 @@ export const AboutUs = () => {
   };
 
   const Container={
-    padding:'56px',
-    marginTop:'36px'
+    padding:'8px',
+    marginTop:'16px',
+    display: 'flex',
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
   };
+
+  const SmallBox={
+    width:'50%',
+    borderRadius: '10px',
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: '#fff',
+    backgroundClip: 'borderBox',
+    border: '1px',
+  }
+
+  const LargeBox={
+    width:'100%',
+    borderRadius: '10px',
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: '#fff',
+    backgroundClip: 'borderBox',
+    border: '1px',
+    alignContent: 'center'
+  }
 
   return (
       <>
-      <Box textAlign={'center'} style={{ backgroundColor: "lightgreen", padding:"24px"}}>
-        <Heading mb={4} style={{fontSize:"48px", color:"white"}}> Our Greenmove's Mission ♻️</Heading>
-      </Box>
+      <div textAlign={'center'} style={{ backgroundColor: "white", padding:"24px", display:"flex"}}>
+        <img src={ Logo } style={{paddingRight:"120px"}}/>
+        <Heading style={{fontSize:"48px", color:"lightGreen"}}>♻️ Our Greenmove's Mission ♻️</Heading>
+      </div>
       <Spacer />
         <div style={ MainImage }>
           <div style={ Container }>
             <div style={ Card }>
+             <div style={ LargeBox }>
               <h1 style={{color:"black",fontSize:"40px", textAlign:"center", marginTop:"40px", fontFamily: "Myriad Pro Regular", }}>Helping people to find the green and air pollution free place to live as well as the most environmental friendly ways to commute by using our unique scoring methods 🖥 </h1>
+             </div>
             </div>
           </div>
         </div>
@@ -76,18 +107,23 @@ export const AboutUs = () => {
               </br>
               <h1 style={{color:"black",fontSize:"40px", textAlign:"center", marginTop:"40px" }}>How does it work?</h1>
             </div>
-            <div stye={ Container }>
-              <p style={{color:"black",fontSize:"40px", textAlign:"center", marginTop:"40px" }}>🔅 Enter your location</p>
+            <div style={ Container }>
+              <div style={ SmallBox }>
+                <p style={{color:"black",fontSize:"40px", textAlign:"center", marginTop:"40px" }}>🔅 Enter your location</p>
+              </div>
             </div>
-            <div stye={ Container }>
-              <p style={{color:"black",fontSize:"40px", textAlign:"center", marginTop:"40px" }}>🔅 Get the green's living recommendations</p>
+            <div style={ Container }>
+              <div style={ SmallBox }>
+                <p style={{color:"black",fontSize:"40px", textAlign:"center", marginTop:"40px" }}>🔅 Get the green's living recommendations</p>
+              </div>
             </div>
-            <div stye={ Container }>
-              <p style={{color:"black",fontSize:"40px", textAlign:"center", marginTop:"40px" }}>🔅 Search for the rental</p>
+            <div style={ Container }>
+              <div style={ SmallBox }>
+                <p style={{color:"black",fontSize:"40px", textAlign:"center", marginTop:"40px" }}>🔅 Search for the rental</p>
+              </div>
             </div>
           </div>
         </div>
-        <Spacer />
       </>
   );
 }

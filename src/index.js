@@ -20,7 +20,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/home" element={<App />} />
+        <Route path="/about" element={<AboutUs />} />
       </Routes>
       </BrowserRouter>
   </StrictMode>
