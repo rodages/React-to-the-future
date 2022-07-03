@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Center, Stack, Heading, Text } from '@chakra-ui/react';
+import DescriptionModal from './DescriptionModal';
 
 export const Results = ({ data }) => {
 
@@ -55,22 +56,32 @@ export const Results = ({ data }) => {
             <Box style={{fontSize: "12px"}}>Air Quality Index (AQI)</Box>
 
             <Stack p={20} spacing={25} direction='row'>
-                <Feature
+
+                <DescriptionModal 
+                    component={'CO'}
                     title='CO 🍃'
-                    desc={data.CO}
-                />
-                    <Feature
+                    value={data.CO} 
+                    />
+
+                <DescriptionModal 
+                    component={'NO2'}
                     title='NO2 🎈'
-                    desc={data.NO2}
-                />
-                <Feature
+                    value={data.NO2} 
+                    />
+                
+                <DescriptionModal 
+                    component={'OZONE'}
                     title='OZONE 🌍'
-                    desc={data.OZONE}
-                />
-                <Feature
+                    value={data.OZONE} 
+                    />
+
+                <DescriptionModal 
+                    component={'PM10'}
                     title='PM10 ⚛️'
-                    desc={data.PM10}
-                />
+                    value={data.PM10} 
+                    />
+
+
                 <Feature
                     title='PM25 🧪'
                     desc={data.PM25}

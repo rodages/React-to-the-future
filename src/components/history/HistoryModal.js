@@ -25,9 +25,7 @@ import { SearchIcon,StarIcon } from '@chakra-ui/icons'
           <ModalContent>
             <ModalHeader>History of Previous Search Results</ModalHeader>
             <ModalCloseButton />
-            {/* <ModalBody>
-            modal body
-            </ModalBody> */}
+
             {history.length<1?
             <ModalBody>No searches made yet</ModalBody>:
             <ModalBody>
