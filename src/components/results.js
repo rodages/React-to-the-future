@@ -49,7 +49,7 @@ export const Results = ({ data }) => {
     return  (
         <>
         <Center flexDirection={'column'} textAlign="center">
-            <Box p={10}>{data.placeName}, {data.state}, {data.countryCode}</Box>
+            <Box fontSize={"20px"} p={10}>{data.placeName}, {data.state}, {data.countryCode}</Box>
             <Box>{data.aqiInfo.category}</Box>
             <Box style={{fontSize: "70px"}}>{data.AQI}{conditions[data.aqiInfo.category]}</Box>
             <Box style={{fontSize: "12px"}}>Air Quality Index (AQI)</Box>
