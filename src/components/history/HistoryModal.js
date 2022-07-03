@@ -9,15 +9,16 @@ import {
     VStack,
     StackDivider
   } from '@chakra-ui/react'
-  import { Button, ButtonGroup } from '@chakra-ui/react'
+  import { Button, ButtonGroup,IconButton } from '@chakra-ui/react'
   import { useDisclosure } from '@chakra-ui/react'
+import { SearchIcon,StarIcon } from '@chakra-ui/icons'
 
-  function HistoryModal({history}) {
+  function HistoryModal({history,setData}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     console.log(history,"history")
     return (
       <>
-        <Button onClick={onOpen}>Browse History</Button>
+        <IconButton onClick={onOpen} aria-label='history or favourites' colorScheme='pink' icon={<StarIcon />} />
   
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
@@ -35,7 +36,12 @@ import {
                 spacing={4}
                 align='stretch'
                 >
-                    {history.map((item,i)=><Button key={i}>{item.placeName} ({item.aqiInfo.category}-{item.aqiInfo.concentration}) </Button>)}
+                    {history.map((item,i)=><Button 
+                    onClick={()=>{
+                        setData(item)
+                        onClose()
+                    }}
+                    key={i}>{item.placeName} ({item.aqiInfo.category}-{item.aqiInfo.concentration}) </Button>)}
                 </VStack>
             </ModalBody>
             }

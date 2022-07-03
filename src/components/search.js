@@ -6,7 +6,8 @@ import {
 import { Input, InputGroup, Spinner, IconButton } from '@chakra-ui/react'
 import axios from 'axios';
 import { Results } from './results';
-import { SearchIcon } from '@chakra-ui/icons'
+import { SearchIcon,StarIcon } from '@chakra-ui/icons'
+import HistoryModal from './history/HistoryModal';
 
 function Search(){
     const [inputData,setInputData ] = useState("")
@@ -16,6 +17,8 @@ function Search(){
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
     const [data, setData] = useState();
+
+    const[history, setHistory] = useState([])
 
     console.log(coordinates,"coord")
 
@@ -64,6 +67,7 @@ function Search(){
             setData(data.stations[0])
             setLoading(false);
             setInputData('')
+            setHistory([...history,...data.stations]);
             // localStorage.setItem("lng", data.stations[0].lng);
             // localStorage.setItem("lat", data.stations[0].lat);
 
@@ -100,6 +104,7 @@ function Search(){
                                     }
                                 </InputGroup>
                             </form>
+                                       <HistoryModal history={history} setData={setData} />
                         </Center>
                     </Box>
                 </Box>
