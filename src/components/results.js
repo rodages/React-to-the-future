@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-    Box,
-    Center
-} from '@chakra-ui/react';
+import { Box, Center, Stack, Heading, Text } from '@chakra-ui/react';
 
 export const Results = ({ data }) => {
 
@@ -40,21 +37,49 @@ export const Results = ({ data }) => {
         'Moderate': '🤨',
         'Unhealthy': '🤢'}
 
+    function Feature({ title, desc, ...rest }) {
+        return (
+            <Box p={5} shadow='md' borderWidth='1px' {...rest}>
+            <Heading fontSize='xl'>{title}</Heading>
+            <Text mt={4}>{desc}</Text>
+            </Box>
+        )
+        }
+
     return  (
         <>
         <Center flexDirection={'column'} textAlign="center">
-        <Box p={10}>{data.placeName}, {data.state}, {data.countryCode}</Box>
-        <Box>{data.aqiInfo.category}</Box>
-        <Box style={{fontSize: "70px"}}>{data.AQI}{conditions[data.aqiInfo.category]}</Box>
-        <Box style={{fontSize: "12px"}}>Air Quality Index (AQI)</Box>
-        <Box p={10}>
-            <p>CO: {data.CO}</p>
-            <p>NO2: {data.NO2}</p>
-            <p>OZONE: {data.OZONE}</p>
-            <p>PM10: {data.PM10}</p>
-            <p>PM25: {data.PM25}</p>
-            <p>SO2: {data.SO2}</p>
-        </Box>
+            <Box p={10}>{data.placeName}, {data.state}, {data.countryCode}</Box>
+            <Box>{data.aqiInfo.category}</Box>
+            <Box style={{fontSize: "70px"}}>{data.AQI}{conditions[data.aqiInfo.category]}</Box>
+            <Box style={{fontSize: "12px"}}>Air Quality Index (AQI)</Box>
+
+            <Stack p={20} spacing={25} direction='row'>
+                <Feature
+                    title='CO'
+                    desc={data.CO}
+                />
+                    <Feature
+                    title='NO2'
+                    desc={data.NO2}
+                />
+                <Feature
+                    title='OZONE'
+                    desc={data.OZONE}
+                />
+                <Feature
+                    title='PM10'
+                    desc={data.PM10}
+                />
+                <Feature
+                    title='PM25'
+                    desc={data.PM25}
+                />
+                <Feature
+                    title='SO2'
+                    desc={data.SO2}
+                />
+            </Stack>
         </Center>
         </>
     )   
