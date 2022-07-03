@@ -1,11 +1,5 @@
 import React, { useState } from 'react'
-import {
-    Box,
-    Center, Image
-} from '@chakra-ui/react';
-import { AirQualityResults } from '../components/airquality-results';
-import { Input, InputGroup, Spinner, IconButton,  } from '@chakra-ui/react'
-import { SearchIcon, ViewIcon } from '@chakra-ui/icons'
+import { Box } from '@chakra-ui/react';
 
 import axios from 'axios';
 import Search from '../components/search';
@@ -75,31 +69,6 @@ export const Home = () => {
         <Search />
         <Box boxSize='sm' minW={'100%'} w={'100%'} h={'50%'}bgSize={'cover'} bgImage="url('/assets/hills.png')" bottom={0} bgRepeat="no-repeat" objectFit='fill' position={'fixed'} opacity='75%'>
         </Box>
-            {/* <Box minH="100vh">
-                <Box textAlign="center" fontSize="xl">
-                    <Box spacing={8}>
-                        <Center p={60}>
-                            <form onSubmit={handleClick}>
-                                <InputGroup size='md'>
-                                    <Input
-                                        pr='4.5rem'
-                                        placeholder='Enter a location...'
-                                        onChange={handleChange}
-                                        value={inputData}
-                                    />
-                                    {loading ? <Spinner size='lg' colorScheme='teal' variant='solid'></Spinner> :
-                                        <IconButton aria-label='Search database' colorScheme='teal' type='submit' icon={<SearchIcon />} />
-                                        // <Button >search</Button>
-                                    }
-                                </InputGroup>
-                            </form>
-                            {data ? <IconButton onClick={fetchEmissions} aria-label='Search database' icon={<ViewIcon />} /> : ''}
-                        </Center>
-                    </Box>
-                </Box>
-                {data ? <AirQualityResults data={data} /> : ""}
-                <Nav />
-            </Box> */}
         </>
     );
 }

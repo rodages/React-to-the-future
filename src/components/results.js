@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     Box,
-    Center, Image
+    Center
 } from '@chakra-ui/react';
 
 export const Results = ({ data }) => {

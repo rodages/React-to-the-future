@@ -6,7 +6,7 @@ import {
 import { Input, InputGroup, Spinner, IconButton } from '@chakra-ui/react'
 import axios from 'axios';
 import { Results } from './results';
-import { SearchIcon,StarIcon } from '@chakra-ui/icons'
+import { SearchIcon } from '@chakra-ui/icons'
 import HistoryModal from './history/HistoryModal';
 
 function Search(){
