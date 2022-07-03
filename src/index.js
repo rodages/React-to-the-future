@@ -9,6 +9,7 @@ import {
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
+import {AboutUs} from './screens/AboutUs';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
@@ -19,6 +20,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
       </BrowserRouter>
   </StrictMode>
