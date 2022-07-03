@@ -56,27 +56,27 @@ export const Results = ({ data }) => {
 
             <Stack p={20} spacing={25} direction='row'>
                 <Feature
-                    title='CO'
+                    title='CO 🍃'
                     desc={data.CO}
                 />
                     <Feature
-                    title='NO2'
+                    title='NO2 🎈'
                     desc={data.NO2}
                 />
                 <Feature
-                    title='OZONE'
+                    title='OZONE 🌍'
                     desc={data.OZONE}
                 />
                 <Feature
-                    title='PM10'
+                    title='PM10 ⚛️'
                     desc={data.PM10}
                 />
                 <Feature
-                    title='PM25'
+                    title='PM25 🧪'
                     desc={data.PM25}
                 />
                 <Feature
-                    title='SO2'
+                    title='SO2 💨'
                     desc={data.SO2}
                 />
             </Stack>
