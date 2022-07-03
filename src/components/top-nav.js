@@ -13,8 +13,8 @@ import {
   FiHexagon,
 } from 'react-icons/fi';
 const LinkItems = [
-  { name: 'Test', icon: FiHome },
-  { name: 'About us', icon: FiHexagon },
+  { name: 'Home', icon: FiHome },
+  { name: 'About', icon: FiHexagon },
 ];
 export function Nav({ children }) {
   const { isOpen, onClose } = useDisclosure();
@@ -47,7 +47,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       <Box>
       {LinkItems.map((link) => (
         <Box bg="white">
-          <NavItem w="200px" key={link.name} icon={link.icon}>
+          <NavItem w="200px" name={link.name} icon={link.icon}>
             {link.name}
           </NavItem>
         </Box>
@@ -56,9 +56,9 @@ const SidebarContent = ({ onClose, ...rest }) => {
     </Box>
   );
 };
-const NavItem = ({ icon, children, ...rest }) => {
+const NavItem = ({ name, icon, children, ...rest }) => {
   return (
-    <Link href="/aboutus" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link href={name} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
         p="4"
@@ -84,5 +84,6 @@ const NavItem = ({ icon, children, ...rest }) => {
         {children}
       </Flex>
     </Link>
+
   );
 };
