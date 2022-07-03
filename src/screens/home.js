@@ -73,7 +73,7 @@ export const Home = () => {
     return (
         <>
         <Search />
-        <Box boxSize='sm' minW={'100%'} w={'100%'} bgSize={'cover'} bgImage="url('/assets/hills.png')" bottom={0} bgRepeat="no-repeat" objectFit='fill' position={'fixed'} opacity='75%'>
+        <Box boxSize='sm' minW={'100%'} w={'100%'} h={'50%'}bgSize={'cover'} bgImage="url('/assets/hills.png')" bottom={0} bgRepeat="no-repeat" objectFit='fill' position={'fixed'} opacity='75%'>
         </Box>
             {/* <Box minH="100vh">
                 <Box textAlign="center" fontSize="xl">
