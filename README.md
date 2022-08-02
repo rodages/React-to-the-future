@@ -5,7 +5,7 @@ This project is created for the [Planes Hackathon](https://www.notion.so/planess
 <img width="1280" alt="Screenshot of Green Move" src="https://user-images.githubusercontent.com/58271566/177605333-3b78125e-ffcc-4a1f-8b34-047670a0e80c.png">
 
 ## Description 
-Greenmove is a front end React application for users to check air quality in an area using [Ambee Air Quality API](https://www.getambee.com/api-documentation) to aid their decision in moving to that area.
+Green Move is a front end React application for users to check air quality in an area using [Ambee Air Quality API](https://www.getambee.com/api-documentation) to aid their decision in moving to that area.
 
 # Installation and Usage
 Clone or download this repo.    
@@ -64,3 +64,12 @@ It should load on: http://localhost:3000/
 - Linked to property search API
 - See air quality of nearby areas / map view
 - Calculate emissions between distances 
+
+# Meet The Team
+
+- [@chunman906](https://github.com/chunman906)
+- [@E-F-J](https://github.com/E-F-J)
+- [@natbibi](https://github.com/natbibi)
+- [@rodages](https://github.com/rodages)
+
+Check out our [Team Profile](https://www.planes.studio/blog/meet-the-hackathon-team-green-move).
